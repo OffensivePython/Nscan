@@ -17,7 +17,7 @@ Check if Nscan executes
 $ ./nscan.py
 Usage: 
 nscan.py x.x.x.x/x [options]
-nscan.py iface load/unload : Load/Unload Nscan interface alias
+nscan.py iface load/unload : Load/Unload Nscan alias interface
 nscan.py resume filename.conf: resume previous scan
 
 
@@ -36,4 +36,15 @@ Options:
   -c N,T, --cooldown=N,T
                         Every N (int) packets sent sleep P (float)
                         (Default=1000,1)
+```
+
+# Usage
+First thing you need to do is to load nscan alias interface
+```
+$ ./nscan.py iface load
+Press enter key to load nscan alias interface
+
+[....] Running /etc/init.d/networking restart is deprecated because it may not [warnable some interfaces ... (warning).
+[ ok ] Reconfiguring network interfaces...done.
+Nscan alias interface loaded: 10.0.2.16
 ```
