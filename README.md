@@ -40,6 +40,7 @@ Options:
 
 # Usage
 Nscan is simple to use, it works just the way you expect it
+
 First thing you need to do is to load nscan alias interface
 ```
 $ ./nscan.py iface load
@@ -76,7 +77,7 @@ $ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3
 ```
 This splits the 65535 hosts in 3 ranges (3 threads), every thread is going to scan 21845 host
 
-Grabbing banners and save logs in a file:
+Grabbing banners and saving logs in a file:
 ----------------------------------------
 use '-b' to grab banners and '-o' to save logs in a file
 ```
@@ -92,7 +93,7 @@ $ ./nscan.py 192.168.0.0/16 -p443 -b -n10
 
 Importing Nscripts:
 -------------------
-To import Nscripts, use '--import' with filename (without extension '.py') and specifiying the port or range of ports
+To import Nscripts, use '--import' with filename (without extension '.py') and specify the port and/or range of ports
 ```
 $ ./nscan.py xxx.xxx.161.152/24 -p1080 --import=proxy:1080
 
@@ -125,10 +126,35 @@ Scanning [xxx.xxx.161.152 -> xxx.xxx.162.0] (104 hosts/1 ports)
 [MAIN] Done (Fri Jan 30 09:14:58 2015)
 ```
 Every ip has the port 1080 open, will be chained to the Nscript proxy, which checks if a SOCKS service is running behind it.
-This will chains every ip:port that has the port 1080, and the range of ports [3127,3128,3129] to proxy script
+
+This will chains every ip:port that has the port 1080,3127,3128,3129 open to proxy script
 ```
 $ ./nscan.py xxx.xxx.xxx.xxx/xx -p8080,1080,3127-3129 --import=proxy:1080,3127-3129
 ```
 P.S: Port 8080 will not be chained to the script, since it's not specified
+
+Suspending/Resuming a Scan:
+---------------------------
+If you have a large range of hosts to scan, and your bandwidth can't finish the scan really quick, Nscan allow you to suspend a scan and resume it later where it's stopped last time.
+To suspend a running scan, hit [CTRL]+C, Nscan will save where it's paused in 'resume.conf'
+The resume configuration file looks something like this:
+```
+$ cat resume.conf
+[NSCAN]
+hosts = [167772160, 184549376L]
+ports = [[80, 81]]
+threads = 1
+imports = None
+banner = True
+count = None
+output = None
+indexes = [(16777216L, 4194304L, -249, 16776967L, 249)]
+cooldown = (1000, 1.0)
+```
+To resume a previous scan, simple type:
+```
+$ ./nscan.py resume resume.conf
+```
+
 
 
