@@ -24,7 +24,7 @@ class Generator(object):
     def __iter__(self):
         return self
     def next(self):
-        if (self.num+self.inc)>self.size:
+        if (self.num+self.inc)>=self.size:
             self.next_index()
             self.next_base()
         self.num = self.num + self.inc
