@@ -1,5 +1,5 @@
 # Nscan
-Nscan is a fast Network scanner optimized for internet-wide scanning purposes. It has it's own tiny TCP/IP stack and uses Raw sockets for sending TCP SYN probes. It doesn't need to set SYN Cookies to check if received packets is a result of it's own scan, and that's what makes Nscan faster than other similar scanners.
+Nscan is a fast Network scanner optimized for internet-wide scanning purposes. It has it's own tiny TCP/IP stack and uses Raw sockets for sending TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if received packets is a result of it's own scan, that makes Nscan faster than other similar scanners.
 
 Nscan has a cool feature which allow you to extend your scan by chaining found ip:port to another scripts where it might checks for vulnerabilities, exploit targets, check for Proxies/VPNs... 
 
