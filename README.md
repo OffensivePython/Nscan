@@ -48,3 +48,21 @@ Press enter key to load nscan alias interface
 [ ok ] Reconfiguring network interfaces...done.
 Nscan alias interface loaded: 10.0.2.16
 ```
+# Simple Scan
+To scan your local network for port 22,80:
+```
+$ ./nscan.py 192.168.0.0/16 -p22,80
+
+    _   __                    
+   / | / /_____________ _____ 
+  /  |/ / ___/ ___/ __ `/ __ \
+ / /|  (__  ) /__/ /_/ / / / /
+/_/ |_/____/\___/\__,_/_/ /_/ 
+@OffensivePython             1.0
+URL: https://github.com/OffensivePython/Nscan
+
+Scanning [192.168.0.0 -> 192.169.0.0] (65536 hosts/1 ports)
+[MAIN] Starting the scan (Fri Jan 30 07:11:02 2015)
+...
+```
+This scans your 65535 hosts in your local network
