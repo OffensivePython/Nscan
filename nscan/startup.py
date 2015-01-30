@@ -13,8 +13,8 @@ USAGE = '''
 '''
 
 help = (
-	'Port(s) number (e.g. -p21-25,80)',
-	'Threads used to send packets (default=1)',
+    'Port(s) number (e.g. -p21-25,80)',
+    'Threads used to send packets (default=1)',
     'Nscan scripts to import (e.g. --import=ssh_key:22+check_proxy:80-85,8080)',
     'Fetch banners',
     'Number of results to get',
