@@ -66,3 +66,23 @@ Scanning [192.168.0.0 -> 192.169.0.0] (65536 hosts/1 ports)
 ...
 ```
 This scans your 65535 hosts in your local network
+
+Multithreading the scan:
+-----------------------
+```
+$ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3 
+```
+This splits the 65535 hosts in 3 ranges (3 threads), every thread is going to scan 21845 host
+
+Grabbing banners and save logs in a file:
+----------------------------------------
+```
+$ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3 -b -o nscan.log
+```
+
+Scanning to find 10 results:
+----------------------------
+```
+$ ./nscan.py 192.168.0.0/16 -p443 -b -n10
+```
+
