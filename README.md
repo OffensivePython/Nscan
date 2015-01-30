@@ -183,8 +183,9 @@ $ ./nscan.py 0.0.0.0./0 -p21-25,8080 --cooldown=[ANY],0
 Every nscan script has to have a run() function, that takes two arguments:
 
 queue: This is a queue where your script receives ip:port
+
 event: This tells your script that Nscan is completed the scan, and waiting for your script to finsish before it exits
-Make sure that your script is under '~/nscan/nscripts' folder
+Make sure that your script is under '~/nscan/nscripts' folder.
 Every Nscript has this simple skeleton:
 ```Python
 import Queue
@@ -214,4 +215,5 @@ logging.info('[{}] {}:{} | {}'.format(SCRIPT, IP, PORT, 'MY RESULTS'))
 
 # Contribute and Share you Nscripts:
 Adivces, Requests, Improvements to make Nscan more stable and faster are always welcome.
+
 If you want to share you Nscripts with everybody, tweet me at @OffensivePython #Nscan with a link of your script, and i will add it under the nscript folder here
