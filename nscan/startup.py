@@ -69,7 +69,7 @@ class Parser(object):
                     print 'Press enter key to load nscan alias interface'
                     raw_input()
                     siface = iface.load()
-                    print 'nscan alias interface loaded:', siface
+                    print 'Nscan alias interface loaded:', siface
                     sys.exit()
                 elif 'UNLOAD' == cmd:
                     print 'Press enter key to delete nscan alias interface'
@@ -93,7 +93,7 @@ class Parser(object):
             self.print_help()
             sys.exit()
         if not self.options.diface:
-            print 'No nscan alias loaded, try: ./nscan.py iface load'
+            print 'No Nscan alias loaded, try: ./nscan.py iface load'
             sys.exit()
         return self.options
     def print_help(self):
