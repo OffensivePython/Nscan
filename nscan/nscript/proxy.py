@@ -1,3 +1,6 @@
+'''
+    Nscan script that checks for SOCKS4/5 Proxies
+'''
 import Queue
 import socket
 import struct
