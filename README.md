@@ -185,7 +185,9 @@ Every nscan script has to have a run() function, that takes two arguments:
 queue: This is a queue where your script receives ip:port
 
 event: This tells your script that Nscan is completed the scan, and waiting for your script to finsish before it exits
+
 Make sure that your script is under '~/nscan/nscripts' folder.
+
 Every Nscript has this simple skeleton:
 ```Python
 import Queue
