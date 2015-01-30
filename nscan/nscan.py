@@ -80,6 +80,9 @@ def main(options):
 			stop_time = time.time()
 			event['send'].clear()
 			event['recv'].clear()
+			if nscripts:
+			    nscripts.event.set()
+			    nscripts.Cleanup()
 			indexes = []
 			for g in generators:
 				indexes.append(g.suspend())
@@ -99,6 +102,7 @@ def main(options):
 			cfile.close()
 			break
 	logging.info('[MAIN] Packets sent in %.01f minutes'%((stop_time-start_time)/60))
+	logging.info('[MAIN] Total elapsed time: %.01f minutes'%((time.time()-start_time)/60)
 	logging.info('[MAIN] Done (%s)'%time.asctime())
 
 if __name__ == '__main__':
