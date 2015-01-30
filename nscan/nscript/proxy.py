@@ -49,3 +49,5 @@ def run(queue, event):
 					logging.info('[PROXY] {}:{} | SOCKS{}'.format(host[0], host[1], socks))
 			except Queue.Empty:
 				pass
+			except KeyboardInterrupt:
+			    break
