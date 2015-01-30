@@ -8,7 +8,7 @@ from optparse import OptionParser
 
 USAGE = '''
 %prog x.x.x.x/x [options]
-%prog iface load/unload : Load/Unload Nscan interface alias
+%prog iface load/unload : Load/Unload Nscan alias interface
 %prog resume filename.conf: resume previous scan
 '''
 
@@ -130,7 +130,6 @@ class nscanif(object):
         while True:
             entry = re.search(alias, content)
             if entry:
-                print 'Gonna delete this:\n', entry.group(0)
                 content = content.replace(entry.group(0), '')
             else:
                 break
