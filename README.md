@@ -39,6 +39,7 @@ Options:
 ```
 
 # Usage
+Nscan is simple to use, it works just the way you expect it
 First thing you need to do is to load nscan alias interface
 ```
 $ ./nscan.py iface load
@@ -69,6 +70,7 @@ This scans your 65535 hosts in your local network
 
 Multithreading the scan:
 -----------------------
+use '-t' to specify how many sending thread you want to use, this decreases the elapsed time of the scan by n times:
 ```
 $ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3 
 ```
@@ -76,13 +78,17 @@ This splits the 65535 hosts in 3 ranges (3 threads), every thread is going to sc
 
 Grabbing banners and save logs in a file:
 ----------------------------------------
+use '-b' to grab banners and '-o' to save logs in a file
 ```
 $ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3 -b -o nscan.log
 ```
 
-Scanning to find 10 results:
+Scanning to find N results:
 ----------------------------
+In order to stop the scan after receiving 10 results:
 ```
 $ ./nscan.py 192.168.0.0/16 -p443 -b -n10
 ```
 
+Importing Nscripts:
+-------------------
