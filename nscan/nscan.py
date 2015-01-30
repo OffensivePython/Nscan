@@ -102,7 +102,7 @@ def main(options):
 			cfile.close()
 			break
 	logging.info('[MAIN] Packets sent in %.01f minutes'%((stop_time-start_time)/60))
-	logging.info('[MAIN] Total elapsed time: %.01f minutes'%((time.time()-start_time)/60)
+	logging.info('[MAIN] Total elapsed time: %.01f minutes'%((time.time()-start_time)/60))
 	logging.info('[MAIN] Done (%s)'%time.asctime())
 
 if __name__ == '__main__':
