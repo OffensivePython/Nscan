@@ -92,3 +92,35 @@ $ ./nscan.py 192.168.0.0/16 -p443 -b -n10
 
 Importing Nscripts:
 -------------------
+```
+./nscan.py 103.246.161.152/24 -p1080 --import=proxy:1080
+
+    _   __                    
+   / | / /_____________ _____ 
+  /  |/ / ___/ ___/ __ `/ __ \
+ / /|  (__  ) /__/ /_/ / / / /
+/_/ |_/____/\___/\__,_/_/ /_/ 
+@OffensivePython             1.0
+URL: https://github.com/OffensivePython/Nscan
+
+Scanning [103.246.161.152 -> 103.246.162.0] (104 hosts/1 ports)
+[MAIN] Starting the scan (Fri Jan 30 09:14:14 2015)
+[SEND] Sent: 104 packets
+[RECV] Received: 7 packets
+[MAIN] 103.246.161.152:1080
+[MAIN] 103.246.161.173:1080
+[MAIN] 103.246.161.195:1080
+[MAIN] 103.246.161.196:1080
+[MAIN] 103.246.161.194:1080
+[MAIN] 103.246.161.239:1080
+[MAIN] 103.246.161.193:1080
+[PROXY] 103.246.161.152:1080 | SOCKS4
+[PROXY] 103.246.161.195:1080 | SOCKS4
+[PROXY] 103.246.161.196:1080 | SOCKS4
+[PROXY] 103.246.161.194:1080 | SOCKS4
+[PROXY] 103.246.161.193:1080 | SOCKS4
+[MAIN] Packets sent in 0.0 minutes
+[MAIN] Total elapsed time: 0.7 minutes
+[MAIN] Done (Fri Jan 30 09:14:58 2015)
+```
+
