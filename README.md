@@ -156,5 +156,19 @@ To resume a previous scan, simple type:
 $ ./nscan.py resume resume.conf
 ```
 
+Cooling Down the Transfer rate:
+-------------------------------
+This is a very important option to regulate Nscan with your bandwidth, If you don't choose this properly, Nscan will probably knock off your router and force it to restart since it sends more traffic than your router could handle.
+You can specify the number of packets that needs to be sent before Nscan should cool down and sleep for a while
+```
+$ ./nscan.py 10.0.0.0./16 -p21-25,8080 --cooldown=100,0.1
+```
+This tells Nscan, "for every 100 packets sent, sleep for 0.1 second(s)"
+P.S: The size of one packet is 54 bytes
+
+If you have a gigabit Ethernet connection, you probably want to disable this:
+```
+$ ./nscan.py 0.0.0.0./0 -p21-25,8080 --cooldown=[ANY],0
+```
 
 
