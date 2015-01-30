@@ -1,7 +1,7 @@
 # Nscan
-Nscan is a fast Network scanner optimized for internet-wide scanning purposes inspired by Masscan and Zmap. It has it's own tiny TCP/IP stack and uses Raw sockets for sending TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if a received packet is a result of it's own scan, that makes Nscan faster than other similar scanners.
+Nscan is a fast Network scanner optimized for internet-wide scanning purposes and inspired by Masscan and Zmap. It has it's own tiny TCP/IP stack and uses Raw sockets to send TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if a received packet is a result of it's own scan, that makes Nscan faster than other similar scanners.
 
-Nscan has a cool feature that allows you to extend your scan by chaining found ip:port to another scripts where it might checks for vulnerabilities, exploit targets, check for Proxies/VPNs... 
+Nscan has a cool feature that allows you to extend your scan by chaining found ip:port to another scripts where they might check for vulnerabilities, exploit targets, look for Proxies/VPNs... 
 
 Nscan is a free tool, but consider donating here: 1Gi5Rpz5RBEUpGknSwyRgqzk7b5bQ7Abp2
 
@@ -41,7 +41,7 @@ Options:
 ```
 
 # Usage
-Nscan is simple to use, it works just the way you expect it
+Nscan is simple to use, it works just the way you expect.
 
 If this your first run, you need to load nscan alias interface before launching a Scan
 ```
@@ -144,7 +144,7 @@ P.S: Port 8080 will not be chained to the script, since it's not specified
 
 Suspending/Resuming a Scan:
 ---------------------------
-If you have a large range of hosts to scan, and your bandwidth can't finish the scan really quick, You suspend a scan and resume it later where it's stopped last time.
+If you have a large range of hosts to scan, and your bandwidth can't finish the scan really quick, You can suspend a scan and resume it later where it's stopped.
 
 To suspend a running scan, hit [CTRL]+C, Nscan will save where it's paused in 'resume.conf'.
 The resume configuration file looks something like this:
@@ -182,9 +182,9 @@ $ ./nscan.py 0.0.0.0./0 -p21-25,8080 --cooldown=[ANY],0
 ```
 
 # Write your Own Nscripts
-Every nscan script has to have a run() function, that takes two arguments:
+Every nscan script should have a run() function, that takes two arguments:
 
-queue: This is a queue where your script receives ip:port
+queue: queue where your script receives ip:port
 
 event: This tells your script that Nscan is completed the scan, and waiting for your script to finsish before it exits
 
@@ -218,6 +218,6 @@ logging.info('[{}] {}:{} | {}'.format(SCRIPT, IP, PORT, 'MY RESULTS'))
 ```
 
 # Contribute and Share you Nscripts:
-Adivces, Requests, Improvements to make Nscan more stable and faster are always welcome.
+Tips, Requests, Improvements to make Nscan more stable and faster are always welcome.
 
-If you want to share you Nscripts with everybody, tweet me at @OffensivePython #Nscan with a link of your script, and i will add it under the nscript folder here
+If you want to share your Nscripts with everybody, tweet me at @OffensivePython #Nscan with a link of your script, and i will add it under the nscript folder here
