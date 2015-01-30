@@ -14,7 +14,7 @@ LOGO = r'''
  / /|  (__  ) /__/ /_/ / / / /
 /_/ |_/____/\___/\__,_/_/ /_/ 
 @OffensivePython             1.0
-URL: https://github.com/OffensivePython/Nscan
+URL:  https://github.com/OffensivePython/Nscan
 '''
 
 def print_info(src, srcp, banner):
