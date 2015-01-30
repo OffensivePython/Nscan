@@ -92,8 +92,9 @@ $ ./nscan.py 192.168.0.0/16 -p443 -b -n10
 
 Importing Nscripts:
 -------------------
+To import Nscripts, use '--import' with filename (without extension '.py') and specifiying the port or range of ports
 ```
-./nscan.py 103.246.161.152/24 -p1080 --import=proxy:1080
+$ ./nscan.py xxx.xxx.161.152/24 -p1080 --import=proxy:1080
 
     _   __                    
    / | / /_____________ _____ 
@@ -103,24 +104,31 @@ Importing Nscripts:
 @OffensivePython             1.0
 URL: https://github.com/OffensivePython/Nscan
 
-Scanning [103.246.161.152 -> 103.246.162.0] (104 hosts/1 ports)
+Scanning [xxx.xxx.161.152 -> xxx.xxx.162.0] (104 hosts/1 ports)
 [MAIN] Starting the scan (Fri Jan 30 09:14:14 2015)
 [SEND] Sent: 104 packets
 [RECV] Received: 7 packets
-[MAIN] 103.246.161.152:1080
-[MAIN] 103.246.161.173:1080
-[MAIN] 103.246.161.195:1080
-[MAIN] 103.246.161.196:1080
-[MAIN] 103.246.161.194:1080
-[MAIN] 103.246.161.239:1080
-[MAIN] 103.246.161.193:1080
-[PROXY] 103.246.161.152:1080 | SOCKS4
-[PROXY] 103.246.161.195:1080 | SOCKS4
-[PROXY] 103.246.161.196:1080 | SOCKS4
-[PROXY] 103.246.161.194:1080 | SOCKS4
-[PROXY] 103.246.161.193:1080 | SOCKS4
+[MAIN] xxx.xxx.161.152:1080
+[MAIN] xxx.xxx.161.173:1080
+[MAIN] xxx.xxx.161.195:1080
+[MAIN] xxx.xxx.161.196:1080
+[MAIN] xxx.xxx.161.194:1080
+[MAIN] xxx.xxx.161.239:1080
+[MAIN] xxx.xxx.161.193:1080
+[PROXY] xxx.xxx.161.152:1080 | SOCKS4
+[PROXY] xxx.xxx.161.195:1080 | SOCKS4
+[PROXY] xxx.xxx.161.196:1080 | SOCKS4
+[PROXY] xxx.xxx.161.194:1080 | SOCKS4
+[PROXY] xxx.xxx.161.193:1080 | SOCKS4
 [MAIN] Packets sent in 0.0 minutes
 [MAIN] Total elapsed time: 0.7 minutes
 [MAIN] Done (Fri Jan 30 09:14:58 2015)
 ```
+Every ip has the port 1080 open, will be chained to the Nscript proxy, which checks if a SOCKS service is running behind it.
+This will chains every ip:port that has the port 1080, and the range of ports [3127,3128,3129] to proxy script
+```
+$ ./nscan.py xxx.xxx.xxx.xxx/xx -p8080,1080,3127-3129 --import=proxy:1080,3127-3129
+```
+P.S: Port 8080 will not be chained to the script, since it's not specified
+
 
