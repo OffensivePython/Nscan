@@ -41,7 +41,7 @@ Options:
 # Usage
 Nscan is simple to use, it works just the way you expect it
 
-First thing you need to do is to load nscan alias interface
+If this your first run, you need to load nscan alias interface before launching a Scan
 ```
 $ ./nscan.py iface load
 Press enter key to load nscan alias interface
@@ -50,7 +50,8 @@ Press enter key to load nscan alias interface
 [ ok ] Reconfiguring network interfaces...done.
 Nscan alias interface loaded: 10.0.2.16
 ```
-# Simple Scan
+Simple Scan:
+-----------
 To scan your local network for port 22,80:
 ```
 $ ./nscan.py 192.168.0.0/16 -p22,80
@@ -67,15 +68,21 @@ Scanning [192.168.0.0 -> 192.169.0.0] (65536 hosts/1 ports)
 [MAIN] Starting the scan (Fri Jan 30 07:11:02 2015)
 ...
 ```
-This scans your 65535 hosts in your local network
+This scans the 65536 hosts in your local network
+Scanning the Entire Internet:
+----------------------------
+Scan the entire IPv4 address space for port 80
+```
+$ ./nscan.py 0.0.0.0/0 -p80
+```
 
 Multithreading the scan:
 -----------------------
-use '-t' to specify how many sending thread you want to use, this decreases the elapsed time of the scan by n times:
+use '-t' to specify how many sending thread you want to use, it decreases the elapsed time of the scan by n times:
 ```
 $ ./nscan.py 192.168.0.0/16 -p3389,5900-5910 -t3 
 ```
-This splits the 65535 hosts in 3 ranges (3 threads), every thread is going to scan 21845 host
+This splits the 65536 hosts in 3 ranges (3 threads), every thread is going to scan 21845 host
 
 Grabbing banners and saving logs in a file:
 ----------------------------------------
@@ -127,7 +134,7 @@ Scanning [xxx.xxx.161.152 -> xxx.xxx.162.0] (104 hosts/1 ports)
 ```
 Every ip has the port 1080 open, will be chained to the Nscript proxy, which checks if a SOCKS service is running behind it.
 
-This will chains every ip:port that has the port 1080,3127,3128,3129 open to proxy script
+This will chain every ip:port that has the port 1080,3127,3128,3129 open:
 ```
 $ ./nscan.py xxx.xxx.xxx.xxx/xx -p8080,1080,3127-3129 --import=proxy:1080,3127-3129
 ```
@@ -135,8 +142,9 @@ P.S: Port 8080 will not be chained to the script, since it's not specified
 
 Suspending/Resuming a Scan:
 ---------------------------
-If you have a large range of hosts to scan, and your bandwidth can't finish the scan really quick, Nscan allow you to suspend a scan and resume it later where it's stopped last time.
-To suspend a running scan, hit [CTRL]+C, Nscan will save where it's paused in 'resume.conf'
+If you have a large range of hosts to scan, and your bandwidth can't finish the scan really quick, You suspend a scan and resume it later where it's stopped last time.
+
+To suspend a running scan, hit [CTRL]+C, Nscan will save where it's paused in 'resume.conf'.
 The resume configuration file looks something like this:
 ```
 $ cat resume.conf
@@ -151,7 +159,7 @@ output = None
 indexes = [(16777216L, 4194304L, -249, 16776967L, 249)]
 cooldown = (1000, 1.0)
 ```
-To resume a previous scan, simple type:
+To resume a previous scan, simply type:
 ```
 $ ./nscan.py resume resume.conf
 ```
