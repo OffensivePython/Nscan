@@ -1,7 +1,9 @@
 # Nscan
 Nscan is a fast Network scanner optimized for internet-wide scanning purposes inspired by Masscan and Zmap. It has it's own tiny TCP/IP stack and uses Raw sockets for sending TCP SYN probes. It doesn't need to set SYN Cookies so it doesn't wastes time checking if a received packet is a result of it's own scan, that makes Nscan faster than other similar scanners.
 
-Nscan has a cool feature which allow you to extend your scan by chaining found ip:port to another scripts where it might checks for vulnerabilities, exploit targets, check for Proxies/VPNs... 
+Nscan has a cool feature that allows you to extend your scan by chaining found ip:port to another scripts where it might checks for vulnerabilities, exploit targets, check for Proxies/VPNs... 
+
+Nscan is a free tool, but consider donating here: 1Gi5Rpz5RBEUpGknSwyRgqzk7b5bQ7Abp2
 
 # Getting Nscan to work
 
