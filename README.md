@@ -179,4 +179,29 @@ If you have a gigabit Ethernet connection, you probably want to disable this:
 $ ./nscan.py 0.0.0.0./0 -p21-25,8080 --cooldown=[ANY],0
 ```
 
+# Write your Own Nscripts
+Every nscan has to have a run() function, that takes two arguments:
+    queue: This is a queue where your script receives ip:port
+    event: This tells your script that Nscan is completed the scan, and waiting for your script to finsish before it exits
 
+Every Nscript has this simple skeleton:
+```Python
+import Queue
+import logging
+# Import any module you need here
+
+def run(queue, event):
+    while True:
+        if queue.empty() and event.isSet():
+            # If the Scan is completed and the queue is empty (no more results)
+            break
+        else:
+            try:
+                ip, port = queue.get(False, TIMEOUT) # Should be non-blocking
+                # Do something useful with IP:PORT
+            except KeyboardInterrupt: # Scan suspended, should exit
+                break
+            except Queue.Empty: # No results
+                pass
+                
+```
