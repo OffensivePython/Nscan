@@ -64,7 +64,7 @@ $ ./nscan.py 192.168.0.0/16 -p22,80
 @OffensivePython             1.0
 URL: https://github.com/OffensivePython/Nscan
 
-Scanning [192.168.0.0 -> 192.169.0.0] (65536 hosts/1 ports)
+Scanning [192.168.0.0 -> 192.169.0.0] (65536 hosts/2 ports)
 [MAIN] Starting the scan (Fri Jan 30 07:11:02 2015)
 ...
 ```
