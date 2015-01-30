@@ -4,14 +4,14 @@ Nscan is a fast Network scanner optimized for internet-wide scanning purposes. I
 # Getting Nscan to work
 
 Installing Nscan on Debian/Ubuntu boxes:
-'''
+```
 $ git clone https://github.com/OffensivePython/Nscan
 $ cd Nscan/nscan
 $ chmod +x nscan.py
-'''
+```
 
 Check if nscan executes
-'''
+```
 $ ./nscan.py
 Usage: 
 nscan.py x.x.x.x/x [options]
@@ -34,4 +34,4 @@ Options:
   -c N,T, --cooldown=N,T
                         Every N (int) packets sent sleep P (float)
                         (Default=1000,1)
-'''
+```
