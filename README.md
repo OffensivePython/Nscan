@@ -223,6 +223,6 @@ Tips, Requests, Improvements to make Nscan more stable and faster are always wel
 
 If you want to share your Nscripts with everybody, tweet me at @OffensivePython #Nscan with a link of your script, and i will add it under the nscript folder here
 
-# Contribute and Share your Nscripts:
+# CHANGELOG:
   * UDP Scan Support
   * PPP interfaces Support
