@@ -25,6 +25,7 @@ nscan.py resume filename.conf: resume previous scan
 
 Options:
   -h, --help            show this help message and exit
+  -s STYPE              Scan type S:SYN U:UDP (default=S)
   -p PORTS, --port=PORTS
                         Port(s) number (e.g. -p21-25,80)
   -t THREADS, --threads=THREADS
