@@ -218,7 +218,11 @@ SCRIPT = 'MYSCRIPT'
 logging.info('[{}] {}:{} | {}'.format(SCRIPT, IP, PORT, 'MY RESULTS'))
 ```
 
-# Contribute and Share you Nscripts:
+# Contribute and Share your Nscripts:
 Tips, Requests, Improvements to make Nscan more stable and faster are always welcome.
 
 If you want to share your Nscripts with everybody, tweet me at @OffensivePython #Nscan with a link of your script, and i will add it under the nscript folder here
+
+# Contribute and Share your Nscripts:
+  * UDP Scan Support
+  * PPP interfaces Support
