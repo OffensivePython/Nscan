@@ -10,7 +10,7 @@ Nscan is a free tool, but consider donating here: 1Gi5Rpz5RBEUpGknSwyRgqzk7b5bQ7
 Installing Nscan on Debian/Ubuntu boxes:
 ```
 $ git clone https://github.com/OffensivePython/Nscan
-$ cd Nscan/nscan
+$ cd Nscan/latest
 $ chmod +x nscan.py
 ```
 
